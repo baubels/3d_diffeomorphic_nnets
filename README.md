@@ -1,5 +1,5 @@
 # 3D Image registrations that match through diffeomorphisms (LLDDM Resnet Paper Implementation)
-An example using 800 polyhedra each timestep over the paper's update procedure parameters and 10000 epochs.
+An example (using 800 polyhedra each timestep over the paper's update procedure parameters and 10000 epochs). Here the first hand is the source shape, and the last one is the target. The net constructed the intermediary phases.
 
 ![](screenshot_hands.png)
 
