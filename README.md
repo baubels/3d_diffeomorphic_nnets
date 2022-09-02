@@ -1,5 +1,5 @@
 # 3D Image registrations that match through diffeomorphisms (LLDDM Resnet Paper Implementation)
-An example (using 800 polyhedra each timestep over the paper's update procedure parameters and 10000 epochs). Here the first hand is the source shape, and the last one is the target. The net constructed the intermediary phases.
+An example (using 800 polyhedra each timestep over the paper's update procedure parameters and 10000 epochs). Here the first hand is the source shape, and the last one is the target. The net constructed the intermediary phases. To train, the net solely requires the source and target shapes, so training data should just be in terms of: $\{\text{(src, tar)}^n\}$.
 
 ![](screenshot_hands.png)
 
@@ -10,6 +10,9 @@ The main differences are in the implementation of meshing and in non-order speci
 ### Seeing the diffeomorphic limitations
 ![](screenshot_human.png)
 In one of my tests it was quite nice to see the limitations of using diffeomorphisms to register images. The below tells me that it takes less kinetic energy for a person to reposition their legs this way than in the normal! A possible fix to this issue would be to give non-uniform weighing to registered sources and corresponding targets, therefore focusing flows to those humanly possible as opposed to just being topologically low in loss. This however goes back to the original problem of introducing order to the source and target nodes, which with this assumption in place, makes the problem far simpler.
+
+### Further limitations:
+It's all quite fiddly, not entirely helpful being unaware of parameter extremity effects.
 
 ### Libraries
 - Tensorflow: for making and training of the net
